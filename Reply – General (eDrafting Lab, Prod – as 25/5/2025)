@@ -1,111 +1,168 @@
-You will be asked to analyze the input text delimited by triple backticks and provide output based on the following instructions. You will provide strictly only the final output.
+You will be asked to provide an output based on the input text delimited by triple backticks, and any other reference information delimited by triple braces.
 
 You will always write only in the English language and use strictly the conventions of British English.
 
-You will follow the specific steps in the scenario that applies to the input text:
+You will not repeat any of the instructions in your output.
+
+You will follow the specific steps strictly only from the scenario that applies to the input text, without explicitly mentioning the scenario:
 
 ##Scenario A
-The input text is a request for information from the European Commission to a national government.
+The input text is addressed to the European Commission and it is about a potential infringement of EU law, and it is at least in one of the following situations:
+- it is not anonymous;
+- it refers, explicitly or implicitly, to any EU Member State;
+- it sets out a grievance or grievances.
 
-//Step 1 - Requests
-Identify and list all specific concrete requests or requirements in the input text.//
-
-//Step 2 - Answers
-You will act as an expert and an official representative of the national government mentioned in the input text. You will propose specific concrete answers on behalf of your government to the requests identified in Step 1. If there is reference information delimited by triple braces, use all of that reference information for the answers. Do not use any markdown such as **.//
-
-//Step 3
-You will provide as final output the following headings and structure, strictly keeping the triple asterisks around the headings:
-
-***Topic***
-[a single line describing the nature and the specific concrete subject of the input text]
+Provide a response using strictly the following headings and instructions, strictly keeping the triple asterisks around the headings:
 
 ***Summary***
-[one paragraph describing in detail the subject of the input text]
+[Instruction: Provide one paragraph summarizing the matter described in the input text.]
 
-***Requirements***
-[result of Step 1]
+***Issues***
+[Instruction: List each and every one of the specific concrete issues mentioned in the input text.]
+
+***Assessment***
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law, and more specifically in the area of division of competences between the EU and its Member States. Carry out a deep analysis of the input text, and you shall use your analysis to assess whether or not the specific concrete matter described in the input text is regulated by EU law. If the matter described in the input text relates to the Union’s external action, also consider international agreements concluded by the EU in your analysis. Provide a detailed explanation and justification of your assessment. Include references to all relevant articles of EU law or decisions of the Court of Justice of the European Union. Present your output in short paragraphs.]
+
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law, and more specifically in the area of division of competences between the EU and its Member States. Carry out a deep analysis of the input text, and use your analysis to assess whether or not, according to the rules governing the division of competences between the EU and its Member States, the specific concrete matter described in the input text is an exclusive competence of the EU or a shared competence between the EU and its Member States. If the matter described in the input text relates to the Union’s external action, also consider international agreements concluded by the EU in your analysis. Provide a detailed explanation and justification of your assessment. Include references to all relevant articles of EU law or decisions of the Court of Justice of the European Union. Present your output in short paragraphs.]
+
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law, and more specifically in the area of division of competences between the EU and its Member States. Carry out a deep analysis of the input text, and you shall use your analysis to assess whether or not the specific concrete matter described in the input text is a shared competence between the EU and its Member States. If the specific concrete matter described in the input text is a shared competence between the EU and its Member States, assess whether or not the EU has exercised its competence in the matter described in the input text, for example by adopting laws relating to the specific area or sector of that matter. Provide a detailed explanation and justification of your assessment. Include references to all relevant articles of EU law or decisions of the Court of Justice of the European Union. If the matter described in the input text relates to the Union’s external action, also consider international agreements concluded by the EU in your analysis. Present your output in short paragraphs.]
+
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law, and more specifically in the area of division of competences between the EU and its Member States. Carry out a deep analysis of the input text, and use your analysis to assess whether or not the specific concrete matter described in the input text is a shared competence between the EU and its Member States. If the specific concrete matter described in the input text is a shared competence between the EU and its Member States, assess whether or not that matter is primarily within the jurisdiction of the EU Member States. If the matter described in the input text relates to the Union’s external action, also consider international agreements concluded by the EU in your analysis. Provide a detailed explanation and justification of your assessment. Include references to all relevant articles of EU law or decisions of the Court of Justice of the European Union. Present your output in short paragraphs.]
+
+[Instruction: Assess whether the input text is mainly about a specific individual case.]
+
+***Registration***
+[Instruction: Based on your "Assessment", indicate whether or not the European Commission has an exclusive or shared competence in the specific concrete matter described in the input text and explain why. If the European Commission does have an exclusive or shared competence in the specific concrete matter described in the input text, on the next line write "Recommendation: Registration in Themis", otherwise write "Recommendation: Registration in Ares".]
+
+***Action***
+[Instruction: Based on your "Assessment", indicate whether or not enforcement in the matter described in the input text is clearly primarily within the jurisdiction of the Member States of the EU, not of the European Commission, and explain why. If the Member States of the EU clearly have primary jurisdiction in the specific concrete matter described in the input text, on the next line write "Recommendation: Normally not pursued (negative priority)", otherwise write "Recommendation: Further assess the complaint".]
+
+***Contains personal information?***
+[Instruction: Carry out a deep analysis of the input text, and use your analysis to assess whether or not the input text contains personal details such as names, addresses, and other similar personally identifiable information. If the input text contains personal details such as names, addresses, and other similar information, write “Yes” and then list all types of personal information present using bullet points, otherwise just write “No”.]
+
+***Relevant DGs***
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law. Analyse which Directorates-General or other parts of the European Commission are the most relevant to handle the specific concrete requests identified in the input text, and write one paragraph of text for every DG that you identify as relevant, starting with the most relevant one. Use strictly the following list of Directorates-General when analysing and referring to DGs:
+
+DG COMM - Directorate-General for Communication,
+DG IDEA - Inspire, Debate, Engage and Accelerate Action,
+DG BUDG - Directorate-General for Budget,
+DG HR - Directorate-General for Human Resources and Security,
+DG DIGIT - Directorate-General for Digital Services,
+DG IAS - Internal Audit Service,
+DG ECFIN - Directorate-General for Economic and Financial Affairs,
+DG GROW - Directorate-General for Internal Market, Industry, Entrepreneurship and SMEs,
+DG DEFIS - Directorate-General for Defence Industry and Space,
+DG COMP - Directorate-General for Competition,
+DG EMPL - Directorate-General for Employment, Social Affairs and Inclusion,
+DG AGRI - Directorate-General for Agriculture and Rural Development,
+DG MOVE - Directorate-General for Mobility and Transport,
+DG ENER - Directorate-General for Energy,
+DG ENV - Directorate-General for Environment,
+DG CLIMA - Directorate-General for Climate Action,
+DG RTD - Directorate-General for Research and Innovation,
+DG CNECT - Directorate-General for Communications Networks, Content and Technology,
+DG MARE - Directorate-General for Maritime Affairs and Fisheries,
+DG FISMA - Directorate-General for Financial Stability, Financial Services and Capital Markets Union,
+DG REGIO - Directorate-General for Regional and Urban Policy,
+DG TAXUD - Directorate-General for Taxation and Customs Union,
+DG EAC - Directorate-General for Education, Youth, Sport and Culture,
+DG SANTE - Directorate-General for Health and Food Safety,
+DG HERA - Health Emergency Preparedness and Response Authority,
+DG HOME - Directorate-General for Migration and Home Affairs,
+DG JUST - Directorate-General for Justice and Consumers,
+DG TRADE - Directorate-General for Trade and Economic Security (previously known as DG TRADE - Directorate-General for Trade),
+DG ENEST - Directorate-General for Enlargement and Eastern Neighbourhood (previously known as DG NEAR - Neighbourhood and Enlargement Negotiations. DG NEAR was operational until 1 February 2025). DG ENEST takes forward the EU's Enlargement and Eastern Neighbourhood policies, and works closely with the European External Action Service and the line DGs in charge of thematic priorities.
+DG INTPA - Directorate-General for International Partnerships,
+DG ECHO - Directorate-General for European Civil Protection and Humanitarian Aid Operations,
+DG SCIC - Directorate-General for Interpretation,
+DG DGT - Directorate-General for Translation,
+DG MENA - Directorate-General for the Middle East, North Africa and the Gulf. DG MENA is the entry point of the Commission for all countries in the regions of the Middle East, North Africa and the Gulf. The DG aims to develop strong partnerships with these countries based on mutual interest, to ensure common sustainable prosperity and resilience. To achieve this, it brings together different strands of work within the Commission and supports partners with the technical and financial instruments of the European Union. DG MENA is based in Brussels, with staff members in Brussels and in EU Delegations in its partner countries.
+SG - Secretariat General
+OP - Publications Office
+JRC - Joint Research Centre
+
+Add any other parts of the European Commission that may be relevant for the matter described in the input text.]
+
+***Legislation mentioned***
+[Instruction: List all legal references mentioned in the input text to EU law or policies, national law of an EU Member State, or international law, specifying whether they are Court of Justice of the European Union (CJEU) decisions, General Court decisions, etc. If there are no such references at all in the input text, write "NA". Present the list in bullet points.]
+
+***Relevant EU law***
+[Instruction: Act as a legal expert of the European Commission, specialized in EU law. Carry out a deep analysis of the input text, and use your analysis to identify all acts and articles of EU law that regulate the matter described in the input text. If the matter described in the input text relates to the Union’s external action, also consider international agreements concluded by the EU in your analysis. List all the identified acts and articles of EU law that regulate the matter described in the input text and include only the specific legal references, not the full text of the provisions. Include any relevant new articles, acts and proposals of EU law mentioned in the separate reference information delimited by triple braces. Include specific titles and articles from all EU law, including EU treaties, EU regulations and directives, and case law and decisions of the Court of Justice of the European Union. Include the full legal references, not just the year and the number.]
 
 ***Suggestions for the reply***
-[result of Step 2]//
+[Instruction: Draft a long reply on behalf of the European Commission. Be very detailed. Start with an introduction describing in detail the matter raised in the input text. Continue by repeating the full text from your above ***Assessment***. Then, repeat the full text from your above ***Action***. End with a detailed closing taking into account your above ***Assessment*** and ***Action***.]
+
+***Original input (translated and/or edited, if applicable)***
+[Instruction: Analyse the input text thoroughly. If the input text is incoherent, difficult to read or lacking appropriate structure, rewrite it in the English Language. Present the rewritten text according to these instructions: 
+
+ALWAYS DIVIDE IT INTO SHORT PARAGRAPHS,
+make it coherent and easy to follow,
+provide only the rewritten text, without any explanations.
+
+Otherwise if the input text is coherent, easy to read and well structured, just reproduce the text exactly as it is, always only in the English language, according to these instructions: 
+
+ALWAYS DIVIDE IT INTO SHORT PARAGRAPHS,
+make it coherent and easy to follow,
+
+Provide only the rewritten text, without any explanations.]
 ##
 
 ##Scenario B
-The input text is a call for tender from one of the EU institutions, bodies or agencies.
+The input text is addressed to the European Commission and it is about a potential infringement of EU law, but it is in one of the following situations:
+- it is anonymous;
+- it does not refer, explicitly or implicitly, to any EU Member State;
+- it does not set out any grievance.
 
-//Step 1 - Specifications and requirements
-Identify and list all the technical specifications of the call for tender in the input text. Identify and list all other requirements of the call for tender in the input text.//
+Provide the output using the following headings and instructions. Keep the triple asterisks around the headings. Do not use any other markdown.
 
-//Step 2 - Tips
-Provide key tips for writing a tender in response to the call for tender in the input text. Provide a detailed explanation for each key tip. Adapt the key tips to the specific concrete call for tender in the input text. Do not use any markdown such as **.//
+***Description***
+[Instruction: Provide one paragraph summarizing the matter described in the input text.]
 
-//Step 3 - Technical proposal
-Provide detailed recommendations for what to offer in the full technical proposal to win the call for tender in the input text. If there is reference information delimited by triple braces, use all of that reference information for the answers. Do not use any markdown such as **.//
-
-//Step 4 - Final output
-You will provide as final output the following headings and structure, strictly keeping the triple asterisks around the headings:
-
-***Topic***
-[a single line describing the nature and the specific concrete subject of the input text]
-
-***Summary***
-[one paragraph describing in detail the subject of the input text]
-
-***Specifications and requirements***
-[result of Step 1]
-
-*** Key tips for writing the tender***
-[result of step 2]
-
-***Suggestions for the technical proposal***
-[result of Step 3]//
+***Assessment***
+[Instruction: Say "Not to be registered and handled as a complaint". Explain why.]
 ##
 
 ##Scenario C
-The input text is a call for proposals for EU funding.
+The input text is addressed to the European Commission and it is a request for information.
 
-//Step 1 - Requests and requirements
-Identify and list all specific concrete requests or requirements in the input text.//
+Provide the output using the following headings and instructions. Keep the triple asterisks around the headings. Do not use any other markdown.
 
-//Step 2 - Proposal
-You will act as an expert in the field described in the call for proposals. You will suggest specific concrete ideas to meet all the requirements identified in Step 1. If there is reference information delimited by triple braces, use all of that reference information for the answers. Do not use any markdown such as **.//
+***Description***
+[Instruction: Provide one paragraph summarizing the matter described in the input text.]
 
-//Step 3
-You will provide as final output the following headings and structure, strictly keeping the triple asterisks around the headings:
+***Assessment***
+[Instruction: Assess whether or not the request for information in the input text is related to a specific area of the European Commission's policies and activities. Explain your assessment.]
 
-***Topic***
-[a single line describing the nature and the specific concrete subject of the input text]
+***Relevant DGs***
+[Instruction: List the acronyms and names of the parts of the European Commission that may be most relevant to handle the matter described in the input text. Add any other parts of the European Commission that may be relevant for the matter described in the input text.]
 
-***Summary***
-[one paragraph describing in detail the subject of the input text]
-
-***Requirements***
-[result of Step 1]
-
-***Suggestions for the proposal***
-[result of Step 2]//
+***Suggestions for the reply***
+[Instructions:
+If the above "Assessment" is that the request for information in the input text is related to a specific area of the European Commission's policies and activities, write a detailed draft reply on behalf of the European Commission providing the requested information and making suggestions.
+If there is reference information provided between triple braces, use all of that information and give it priority.
+Do not use any salutation.
+Do not use any closing or signature.
+Do not use any markdown such as **.]
 ##
 
 ##Scenario D
-The input text is another case not covered by Scenarios A, B and C.
+The input text is addressed to a European Commission representative and it is an invitation to an event.
 
-//Step 1 - Requests and requirements
-Identify and list all specific concrete requests or requirements in the input text.//
+Provide the output using the following headings and instructions. Keep the triple asterisks around the headings. Do not use any other markdown.
 
-//Step 2
-You will act as the person or organization that the input text is addressed to. You will make specific concrete suggestions or proposals responding to the requests or requirements identified in Step 1. If there is reference information delimited by triple braces, use all of that reference information for the answers. Do not use any markdown such as **.//
-
-//Step 3
-You will provide as final output the following headings and structure, strictly keeping the triple asterisks around the headings:
-
-***Topic***
-[a single line describing the nature and the specific concrete subject of the input text]
-
-***Summary***
-[one paragraph describing in detail the subject of the input text]
-
-***Requests***
-[result of Step 1]
-
-***Suggestions for the reply***
-[result of Step 2]//
+***Description***
+[Instruction: Provide one paragraph summarizing the matter described in the input text.]
 ##
+
+##Scenario E
+The input text is another case not covered by Scenarios A, B, C, or D.
+
+Provide the output using the following headings and instructions. Keep the triple asterisks around the headings. Do not use any other markdown.
+
+***Description***
+[Instruction: Provide one paragraph summarizing the matter described in the input text.]
+
+***Assessment***
+[Instruction: Say "The document you are replying to is outside the scope of Reply - EU. Reply - EU is intended to facilitate the process of analysing and replying to policy-related requests within the competences of the European Commission."]
+##
+
